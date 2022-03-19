@@ -1,0 +1,231 @@
+//div, li{border: 1px chartreuse solid};
+@import "normalize";
+/*********************************************************************************************/
+@color-b: #000;
+@color-s: #333;
+@color-w: #ffffff;
+@color-f: #3e0040;
+/*********************************************************************************************/
+/* FONTS */
+
+@font-face {
+  font-family: 'CabinSketch';
+  src: url('../fonts/CabinSketch-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Movie Poster';
+  src: url('../fonts/SFMoviePoster.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*********************************************************************************************/
+/* TYPO */
+html {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  padding: 0;
+  font-size: 16px;
+  background-color: @color-b;
+}
+
+body, a, a:focus, a:hover, a:visited {
+  color: @color-w;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: @color-w;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 19px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 13px;
+}
+
+h6 {
+  font-size: 11px;
+}
+
+p {
+  font-size: 16px;
+}
+
+li {
+  list-style: none; /* Убираем исходные маркеры */
+  /*background: url(../img/marker.png) no-repeat 0 6px;  Параметры фона */
+  padding-left: 24px; /* Смещаем текст вправо */
+}
+
+.clear {
+  clear: both;
+}
+
+/////////////////////////////////////
+header {
+  font-family: "SF Movie Poster", sans-serif;
+  font-size: 43px;
+  text-align: center;
+  margin-top: 70px;
+}
+
+#mode {
+  margin: 100px auto;
+}
+
+#mode .text{
+  font-family: 'CabinSketch', sans-serif;
+  font-size: 43px;
+  color: @color-b;
+  text-align: center;
+}
+
+#mode .text-ani1 {
+  animation-name: col1;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+#mode .text-ani2 {
+  animation-name: col2;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+#mode .open{
+  background: url("../img/open.png");
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  left: 50%;
+  margin-left: 200px;
+  margin-top: -400px;
+  animation-name: rot;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  //transition: all 0.3s ease-in-out 0.3s;
+}
+
+#mode .close{
+  background: url("../img/close.png");
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  left: 50%;
+  margin-left: 200px;
+  margin-top: -400px;
+  animation-name: rot;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  //transition: all 0.3s ease-in-out 0.3s;
+}
+
+@keyframes rot {
+  from {
+    transform:rotate(0deg);
+  }
+  20% {
+    transform:rotate(100deg);
+    margin-top: -60px;
+  }
+  30% {
+    margin-top: -100px;
+  }
+  40% {
+    transform:rotate(-60deg);
+    margin-top: -90px;
+  }
+  60% {
+    transform:rotate(45deg);
+  }
+  80% {
+    transform:rotate(20deg);
+  }
+  to {
+    transform:rotate(20deg);
+    margin-top: -90px;
+  }
+}
+
+@keyframes col1 {
+  from {color: @color-b;}
+  38% {color: @color-b;}
+  40% {color: @color-f;}
+  42% {color: @color-b;}
+  58% {color: @color-b;}
+  60% {color: @color-f}
+  62% {color: @color-b;}
+  68% {color: @color-b;}
+  70% {color: @color-f}
+  72% {color: @color-b;}
+  82% {color: @color-b;}
+  84% {color: @color-f}
+  86% {color: @color-b;}
+  91% {color: @color-b;}
+  93% {color: @color-f}
+  95% {color: @color-b;}
+  98% {color: @color-b;}
+  to {color: @color-f;}
+}
+
+@keyframes col2 {
+  from {color: @color-b;}
+  38% {color: @color-b;}
+  40% {color: @color-s;}
+  42% {color: @color-b;}
+  58% {color: @color-b;}
+  60% {color: @color-s}
+  62% {color: @color-b;}
+  68% {color: @color-b;}
+  70% {color: @color-s}
+  72% {color: @color-b;}
+  82% {color: @color-b;}
+  84% {color: @color-s}
+  86% {color: @color-b;}
+  91% {color: @color-b;}
+  93% {color: @color-s}
+  95% {color: @color-b;}
+  98% {color: @color-b;}
+  to {color: @color-s;}
+}
+
+@media (max-width: 980px) {
+  #mode .open {margin-top: -90px;}
+  #mode .close {margin-top: -90px;}
+  #mode .text-ani1 {color: @color-f;}
+  #mode .text-ani2 {color: @color-s;}
+}
